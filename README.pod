@@ -1,0 +1,53 @@
+=pod
+
+=head1 NAME
+
+rtail - irssi-style local and remote file tailer
+
+=head1 SYNOPSIS
+
+    rtail --user root --file <filename> [--file <filename> ...]
+
+C<< <filename> >> can be either:
+
+=over 4
+
+=item a local filename
+
+Ex.: C</var/log/messages>
+
+=item a remote filename, ssh-like syntax
+
+Ex.: C<< <hostname>:<local-file-path> >>
+
+=back
+
+=head1 DESCRIPTION
+
+C<rtail = tail + ssh + irc> means that rtail is a C<irssi>-like console
+application to tail many local and remote files together.
+
+Irc-style commands like C<< /grep <regex> >> allow to search and highlight
+given patterns in the stream of tailed log files that are coming
+from "the tubes".
+
+More commands are planned.
+
+=head2 MOTIVATION
+
+This tool started from my frustration in combing production log files
+from many different servers at the same time.
+
+=head2 STATUS
+
+The basic prototype is functional and usable.
+The only commands right now are C</quit> and C</grep>.
+
+I plan to expand this to allow arbitrary sources of data like
+C<tcpflow> for example. That would be awesome.
+
+The future's just a few night hacking sessions away :)
+
+=head1 AUTHOR
+
+Cosimo Streppone, E<lt>cosimo@cpan.orgE<gt>
