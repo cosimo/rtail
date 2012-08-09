@@ -181,7 +181,7 @@ sub terminate_run_wheels {
         my $wheel = delete $wheels_by_id->{$wheel_id};
         if (defined $wheel) {
             my $pid = $wheel->PID;
-            my $killed = $wheel->kill();
+            my $killed = $wheel->kill(-15);
             $vt->print($window_id,"\0(stderr_text)killing $wheel wheel => $killed");
             delete $heap->{children_by_pid}->{$pid};
             undef $wheel;
